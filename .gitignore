@@ -1,1 +1,7 @@
 credentials.h
+.pio/
+.vscode/
+include/
+lib/
+test/
+platformio.ini
