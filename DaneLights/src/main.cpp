@@ -39,6 +39,8 @@ void setup(){
   timer = millis();
 
   // Connect to Wi-Fi
+  WiFi.mode(WIFI_STA);
+  WiFi.setSleep(false);
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
