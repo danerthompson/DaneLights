@@ -43,7 +43,7 @@ const char index_html[] = R"rawliteral(
         if (ledColor != prevColor) {
             document.getElementById("currentColor").innerHTML = ledColor;
             var xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "/update?hex=" + ledColor.substring(1), true); //Have to remove first char from x, server detects '#' as delimiter
+            xhttp.open("GET", "/lights/update?hex=" + ledColor.substring(1), true); //Have to remove first char from x, server detects '#' as delimiter
             xhttp.send();
             prevColor = ledColor;
         }
@@ -63,7 +63,7 @@ const char index_html[] = R"rawliteral(
                 });
             }
         }
-        xhttp.open("GET", "/initialize", true);
+        xhttp.open("GET", "/lights/initialize", true);
         xhttp.responseType = 'text';
         xhttp.send();
 
